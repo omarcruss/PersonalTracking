@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalTracking", "PersonalTracking\PersonalTracking.csproj", "{281380F6-0307-438C-875B-C7FEC6BD5E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{B5E3EDDD-11BC-4F27-90C6-F1C4D3B6BF47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{24AE2CCF-C8C2-4471-9C1E-BF7D96FE183C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281380F6-0307-438C-875B-C7FEC6BD5E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281380F6-0307-438C-875B-C7FEC6BD5E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281380F6-0307-438C-875B-C7FEC6BD5E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281380F6-0307-438C-875B-C7FEC6BD5E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E3EDDD-11BC-4F27-90C6-F1C4D3B6BF47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E3EDDD-11BC-4F27-90C6-F1C4D3B6BF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E3EDDD-11BC-4F27-90C6-F1C4D3B6BF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E3EDDD-11BC-4F27-90C6-F1C4D3B6BF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AE2CCF-C8C2-4471-9C1E-BF7D96FE183C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AE2CCF-C8C2-4471-9C1E-BF7D96FE183C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AE2CCF-C8C2-4471-9C1E-BF7D96FE183C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AE2CCF-C8C2-4471-9C1E-BF7D96FE183C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87E50878-1870-4C4E-BC85-3526148532D9}
+	EndGlobalSection
+EndGlobal
