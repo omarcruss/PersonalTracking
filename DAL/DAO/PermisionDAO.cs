@@ -16,8 +16,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.PERMISSIONs.InsertOnSubmit(permission);
-                db.SubmitChanges();
+                db.PERMISSIONs.Add(permission);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -79,8 +79,8 @@ namespace DAL.DAO
             try
             {
                 PERMISSION pr = db.PERMISSIONs.First(x => x.ID == permissionID);
-                db.PERMISSIONs.DeleteOnSubmit(pr);
-                db.SubmitChanges();
+                db.PERMISSIONs.Remove(pr);
+                db.SaveChanges();
             }
             catch (Exception)
             {
@@ -95,7 +95,7 @@ namespace DAL.DAO
             {
                 PERMISSION pr = db.PERMISSIONs.First(x => x.ID == permissionID);
                 pr.PermissionState = approved;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -113,7 +113,7 @@ namespace DAL.DAO
                 pr.PermissionEndDate = permission.PermissionEndDate;
                 pr.PermissionExplanation = permission.PermissionExplanation;
                 pr.PermissionDay = permission.PermissionDay;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {

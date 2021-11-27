@@ -59,8 +59,8 @@ namespace DAL.DAO
             try
             {
                 SALARY sl = db.SALARies.First(x => x.ID == salaryID);
-                db.SALARies.DeleteOnSubmit(sl);
-                db.SubmitChanges();
+                db.SALARies.Remove(sl);
+                db.SaveChanges();
             }
             catch (Exception)
             {
@@ -77,7 +77,7 @@ namespace DAL.DAO
                 sl.Amount = salary.Amount;
                 sl.Year = salary.Year;
                 sl.MonthID = salary.MonthID;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -90,8 +90,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.SALARies.InsertOnSubmit(salary);
-                db.SubmitChanges();
+                db.SALARies.Add(salary);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {

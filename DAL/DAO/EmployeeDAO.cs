@@ -13,8 +13,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.EMPOLYEEs.InsertOnSubmit(employee);
-                db.SubmitChanges();
+                db.EMPOLYEEs.Add(employee);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -75,8 +75,8 @@ namespace DAL.DAO
             try
             {
                 EMPOLYEE emp = db.EMPOLYEEs.First(x => x.ID == employeeID);
-                db.EMPOLYEEs.DeleteOnSubmit(emp);
-                db.SubmitChanges();
+                db.EMPOLYEEs.Remove(emp);
+                db.SaveChanges();
                 //List<TASK> tasks = db.TASKs.Where(x => x.EmployeeID == employeeID).ToList();
                 //db.TASKs.DeleteAllOnSubmit(tasks);
                 //db.SubmitChanges();
@@ -107,7 +107,7 @@ namespace DAL.DAO
             {
                 item.DepartmentID = position.DepartmentID;
             }
-            db.SubmitChanges();
+            db.SaveChanges();
         }
 
         public static void UpdateEmployee(EMPOLYEE employee)
@@ -125,7 +125,7 @@ namespace DAL.DAO
                 emp.DepartmentID = employee.DepartmentID;
                 emp.PositionID = employee.PositionID;
                 emp.Salary = employee.Salary;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -140,7 +140,7 @@ namespace DAL.DAO
             {
                 EMPOLYEE employee = db.EMPOLYEEs.First(x => x.ID == empolyeeID);
                 employee.Salary = amount;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception)
             {
@@ -154,7 +154,7 @@ namespace DAL.DAO
             {
                 List<EMPOLYEE> list = db.EMPOLYEEs.Where(x => x.UserNumber == v && x.Password == text).ToList();
                 return list;
-            }
+						}
             catch (Exception ex)
             {
                 throw ex;

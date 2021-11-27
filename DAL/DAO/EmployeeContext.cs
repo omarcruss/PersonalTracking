@@ -8,6 +8,6 @@ namespace DAL.DAO
 {
     public class EmployeeContext
     {
-        public static EmployeeDataClassDataContext db = new EmployeeDataClassDataContext();
-    }
+			public static EmployeeEfDataContext db = new EmployeeEfDataContext();
+		}
 }
