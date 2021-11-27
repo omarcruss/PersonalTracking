@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL.DTO
 {
-    public class PositionDTO : POSITION
+    public class PositionDTO
     {
-        public string DepartmentName { get; set; }
-        public int OldDepartmentID { get; set; }
-    }
+			public int ID { get; set; }
+			public int DepartmentID { get; set; }
+			public string PositionName { get; set; }
+			public string DepartmentName { get; set; }
+      public int OldDepartmentID { get; set; }
+		}
 }
