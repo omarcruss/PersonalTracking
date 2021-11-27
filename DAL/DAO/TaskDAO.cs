@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.DTO;
 using DAL;
+
 namespace DAL.DAO
 {
     public class TaskDAO : EmployeeContext
@@ -18,8 +19,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.TASKs.InsertOnSubmit(task);
-                db.SubmitChanges();
+                db.TASKs.Add(task);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -90,7 +91,7 @@ namespace DAL.DAO
                 {
                     tsk.TaskState = TaskStates.Delivered;
                     tsk.TaskDeliveryDate = DateTime.Today;
-                    db.SubmitChanges();
+                    db.SaveChanges();
                 }
 
             }
@@ -106,8 +107,8 @@ namespace DAL.DAO
             try
             {
                 TASK tsk = db.TASKs.First(x => x.ID == taskID);
-                db.TASKs.DeleteOnSubmit(tsk);
-                db.SubmitChanges();
+                db.TASKs.Remove(tsk);
+                db.SaveChanges();
             }
             catch (Exception)
             {
@@ -125,7 +126,7 @@ namespace DAL.DAO
                 task.TaskContent = update.TaskContent;
                 task.TaskState = update.TaskState;
                 task.EmployeeID = update.EmployeeID;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {

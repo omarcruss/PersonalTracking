@@ -12,8 +12,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.DEPARTMENTs.InsertOnSubmit(department);
-                db.SubmitChanges();
+                db.DEPARTMENTs.Add(department);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -33,7 +33,7 @@ namespace DAL.DAO
             {
                 DEPARTMENT dep = db.DEPARTMENTs.First(x => x.ID == department.ID);
                 dep.DepartmentName = department.DepartmentName;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +47,8 @@ namespace DAL.DAO
             try
             {
                 DEPARTMENT dep = db.DEPARTMENTs.First(x => x.ID == iD);
-                db.DEPARTMENTs.DeleteOnSubmit(dep);
-                db.SubmitChanges();
+                db.DEPARTMENTs.Remove(dep);
+                db.SaveChanges();
             }
             catch (Exception)
             {

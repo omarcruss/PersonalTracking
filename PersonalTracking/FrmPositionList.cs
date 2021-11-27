@@ -73,6 +73,7 @@ namespace PersonalTracking
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            // TODO: There's a bug right here
             detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
             detail.PositionName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             detail.OldDepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value); 

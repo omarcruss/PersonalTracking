@@ -13,8 +13,8 @@ namespace DAL.DAO
         {
             try
             {
-                db.POSITIONs.InsertOnSubmit(position);
-                db.SubmitChanges();
+                db.POSITIONs.Add(position);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -60,8 +60,8 @@ namespace DAL.DAO
             try
             {
                 POSITION position = db.POSITIONs.First(x => x.ID == iD);
-                db.POSITIONs.DeleteOnSubmit(position);
-                db.SubmitChanges();
+                db.POSITIONs.Remove(position);
+                db.SaveChanges();
             }
             catch (Exception)
             {
@@ -77,7 +77,7 @@ namespace DAL.DAO
                 POSITION pst = db.POSITIONs.First(x => x.ID == position.ID);
                 pst.PositionName = position.PositionName;
                 pst.DepartmentID = position.DepartmentID;
-                db.SubmitChanges();
+                db.SaveChanges();
             }
             catch (Exception)
             {
