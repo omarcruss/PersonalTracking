@@ -12,6 +12,6 @@ namespace DAL.DTO
 			public int DepartmentID { get; set; }
 			public string PositionName { get; set; }
 			public string DepartmentName { get; set; }
-      public int OldDepartmentID { get; set; }
+			public int OldDepartmentID { get; set; }
 		}
 }

@@ -62,11 +62,11 @@ namespace PersonalTracking
         private void FrmPositionList_Load(object sender, EventArgs e)
         {
             FillGrid();
-            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[2].HeaderText = "Position name";
             dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[2].Visible = false;
-            dataGridView1.Columns[0].HeaderText = "Department Name";
-            dataGridView1.Columns[3].HeaderText = "Position Name";
+            dataGridView1.Columns[1].HeaderText = "Department ID";
+            dataGridView1.Columns[3].HeaderText = "Department name";
 
 
         }
@@ -74,10 +74,11 @@ namespace PersonalTracking
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             // TODO: There's a bug right here
-            detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-            detail.PositionName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            detail.OldDepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value); 
-            detail.DepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value); 
+            detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.PositionName = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.OldDepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value); 
+            detail.DepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.DepartmentName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

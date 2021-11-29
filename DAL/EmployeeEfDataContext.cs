@@ -18,7 +18,7 @@ namespace DAL
 		public DbSet<TASKSTATE> TASKSTATEs { get; set; }
 
 
-		public EmployeeEfDataContext() : base(ConnectionString)
+        public EmployeeEfDataContext() : base(ConnectionString)
 		{
 		}
 

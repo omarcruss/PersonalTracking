@@ -9,5 +9,5 @@ namespace DAL.DAO
     public class EmployeeContext
     {
 			public static EmployeeEfDataContext db = new EmployeeEfDataContext();
-		}
+	}
 }
