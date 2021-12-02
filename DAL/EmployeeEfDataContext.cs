@@ -5,7 +5,7 @@ namespace DAL
 	// ORM - object relation mapper
 	public class EmployeeEfDataContext : DbContext
 	{
-		private static string ConnectionString = "Server=LAPTOP-3MU9SNU2;Database=PERSONALTRACKING;Trusted_Connection=True;";
+		private static string ConnectionString = "Server=(localdb)\\mssqllocaldb;Database=PERSONALTRACKING;Trusted_Connection=True;";
 
 		public DbSet<DEPARTMENT> DEPARTMENTs { get; set; }
 		public DbSet<EMPOLYEE> EMPOLYEEs { get; set; }

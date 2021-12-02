@@ -42,9 +42,7 @@ namespace PersonalTracking
             }
             else
             {
-                FrmDepartment frm = new FrmDepartment();
-                frm.isUpdate = true;
-                frm.detail = detail;
+                FrmDepartment frm = new FrmDepartment(detail.DepartmentName, detail.ID);
                 frm.Hide();
                 frm.ShowDialog();
                 this.Visible = true;
