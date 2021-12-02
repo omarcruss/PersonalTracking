@@ -8,15 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-using DAL;
 
 namespace PersonalTracking
 {
     public partial class FrmDepartment : Form
     {
-        public FrmDepartment()
+        private int _departmentId;
+        private string _departmentName;
+        private bool _isUpdate;
+
+        private FrmDepartment()
         {
             InitializeComponent();
+        }
+
+        public FrmDepartment(string departmentName = null, int departmentId = 0) : this()
+        {
+            _departmentName = departmentName;
+            _departmentId = departmentId;
+
+            _isUpdate = string.IsNullOrEmpty(_departmentName) || _departmentId != 0;
         }
 
         private void txtDepartment_Click(object sender, EventArgs e)
@@ -37,11 +48,10 @@ namespace PersonalTracking
             }
             else
             {
-                DEPARTMENT department = new DEPARTMENT();
-                if (!isUpdate)
+                if (!_isUpdate)
                 {
-                    department.DepartmentName = txtDepartment.Text;
-                    BLL.DepartmentBLL.AddDepartment(department);
+                    string departmentName = txtDepartment.Text;
+                    DepartmentBLL.AddDepartment(departmentName);
                     MessageBox.Show("Department was added");
                     txtDepartment.Clear();
                 }
@@ -50,22 +60,20 @@ namespace PersonalTracking
                     DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
                     if (DialogResult.Yes == result)
                     {
-                        department.ID = detail.ID;
-                        department.DepartmentName = txtDepartment.Text;
-                        DepartmentBLL.UpdateDepartment(department);
+                        string departmentName = txtDepartment.Text;
+                        DepartmentBLL.UpdateDepartment(_departmentId, departmentName);
                         MessageBox.Show("Department was updated");
                         this.Close();
                     }
                 }
             }
         }
-        public bool isUpdate = false;
-        public DEPARTMENT detail = new DEPARTMENT();
+
         private void FrmDepartment_Load(object sender, EventArgs e)
         {
-            if (isUpdate)
+            if (_isUpdate)
             {
-                txtDepartment.Text = detail.DepartmentName;
+                txtDepartment.Text = _departmentName;
             }
         }
     }

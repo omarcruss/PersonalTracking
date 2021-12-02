@@ -10,8 +10,11 @@ namespace BLL
 {
     public class DepartmentBLL
     {
-        public static void AddDepartment(DEPARTMENT department)
+        public static void AddDepartment(string departmentName)
         {
+            var department = new DEPARTMENT();
+						department.DepartmentName = departmentName;
+
             DepartmentDAO.AddDepartment(department);
         }
 
@@ -20,9 +23,9 @@ namespace BLL
             return DepartmentDAO.GetDepartments();
         }
 
-        public static void UpdateDepartment(DEPARTMENT department)
+        public static void UpdateDepartment(int departmentID, string departmentName)
         {
-            DepartmentDAO.UpdateDepartment(department);
+            DepartmentDAO.UpdateDepartment(departmentID, departmentName);
         }
 
         public static void DeleteDepartment(int iD)
